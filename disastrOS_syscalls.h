@@ -24,3 +24,7 @@ void internal_openResource();
 void internal_closeResource();
 
 void internal_destroyResource();
+
+void internal_send();
+
+void internal_receive();

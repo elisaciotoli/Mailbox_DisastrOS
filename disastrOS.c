@@ -177,6 +177,12 @@ void disastrOS_start(void (*f)(void*), void* f_args, char* logfile){
   syscall_vector[DSOS_CALL_SHUTDOWN]      = internal_shutdown;
   syscall_numarg[DSOS_CALL_SHUTDOWN]      = 0;
 
+  syscall_vector[DSOS_CALL_SEND]      = internal_send;
+  syscall_numarg[DSOS_CALL_SEND]      = 1;
+
+  syscall_vector[DSOS_CALL_RECEIVE]      = internal_receive;
+  syscall_numarg[DSOS_CALL_RECEIVE]      = 1;
+
   // setup the scheduling lists
   running=0;
   List_init(&ready_list);
@@ -284,6 +290,16 @@ int disastrOS_closeResource(int fd) {
 
 int disastrOS_destroyResource(int resource_id) {
   return disastrOS_syscall(DSOS_CALL_DESTROY_RESOURCE, resource_id);
+}
+
+//new
+int disastrOS_send(int mailbox) {
+  return disastrOS_syscall(DSOS_CALL_SEND, mailbox);
+}
+
+//new
+int disastrOS_receive(int mailbox) {
+  return disastrOS_syscall(DSOS_CALL_RECEIVE, mailbox);
 }
 
 

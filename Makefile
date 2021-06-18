@@ -30,7 +30,9 @@ OBJS=pool_allocator.o\
      disastrOS_sleep.o\
      disastrOS_open_resource.o\
      disastrOS_close_resource.o\
-     disastrOS_destroy_resource.o
+     disastrOS_destroy_resource.o\
+     disastrOS_send.o\
+     disastrOS_receive.o\
 
 LIBS=libdisastrOS.a
 

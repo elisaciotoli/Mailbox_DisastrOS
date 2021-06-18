@@ -34,7 +34,10 @@ void initFunction(void* args) {
   disastrOS_printStatus();
   printf("hello, I am init and I just started\n");
   disastrOS_spawn(sleeperFunction, 0);
-  
+
+  //prova funzionamento nuove syscall
+  printf("send = %d\n",disastrOS_send(6));
+  printf("receive = %d\n",disastrOS_receive(5));
 
   printf("I feel like to spawn 10 nice threads\n");
   int alive_children=0;
