@@ -178,7 +178,7 @@ void disastrOS_start(void (*f)(void*), void* f_args, char* logfile){
   syscall_numarg[DSOS_CALL_SHUTDOWN]      = 0;
 
   syscall_vector[DSOS_CALL_SEND]      = internal_send;
-  syscall_numarg[DSOS_CALL_SEND]      = 1;
+  syscall_numarg[DSOS_CALL_SEND]      = 2;
 
   syscall_vector[DSOS_CALL_RECEIVE]      = internal_receive;
   syscall_numarg[DSOS_CALL_RECEIVE]      = 1;
@@ -293,8 +293,8 @@ int disastrOS_destroyResource(int resource_id) {
 }
 
 //new
-int disastrOS_send(int mailbox) {
-  return disastrOS_syscall(DSOS_CALL_SEND, mailbox);
+int disastrOS_send(int mailbox, char* message) {
+  return disastrOS_syscall(DSOS_CALL_SEND, mailbox, message);
 }
 
 //new
