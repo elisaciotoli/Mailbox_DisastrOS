@@ -24,9 +24,6 @@ ListHead timer_list;
 
 // a resource can be a device, a file or an ipc thing
 ListHead resources_list;
-ListHead mailboxes_list;
-
-volatile int message_counter = 0;
 
 SyscallFunctionType syscall_vector[DSOS_MAX_SYSCALLS];
 int syscall_numarg[DSOS_MAX_SYSCALLS];
@@ -195,7 +192,6 @@ void disastrOS_start(void (*f)(void*), void* f_args, char* logfile){
   List_init(&waiting_list);
   List_init(&zombie_list);
   List_init(&resources_list);
-  List_init(&mailboxes_list);
   List_init(&timer_list);
 
 

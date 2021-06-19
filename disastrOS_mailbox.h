@@ -3,9 +3,9 @@
 #include "disastrOS_resource.h"
 
 typedef struct Mailbox{
- ListItem list;
- Resource* resource;
+ Resource resource;
  ListHead messages_list;
+ ListHead waiting_list;
 } Mailbox;
 
 typedef struct Message{
@@ -17,9 +17,6 @@ typedef struct Message{
 void Mailbox_init();
 Mailbox* Mailbox_alloc(int id, int type);
 int Mailbox_free(Mailbox* mailbox);
-typedef ListHead MailboxList;
-Mailbox* MailboxList_byId(MailboxList* l, int id);
-//void MailboxList_print(ListHead* l);
 
 void Message_init();
 Message* Message_alloc(char* text);

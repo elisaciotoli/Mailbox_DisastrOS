@@ -35,20 +35,21 @@ Mailbox* Mailbox_alloc(int id, int type){
   Mailbox* r=(Mailbox*) PoolAllocator_getBlock(&_mailboxes_allocator);
   if (!r)
     return 0;
-  r->list.prev=r->list.next=0;
-  r->resource=Resource_alloc(id,type);
-  List_insert(&resources_list, resources_list.last, (ListItem*) r->resource);
+  r->resource=*Resource_alloc(id,type);
   List_init(&r->messages_list);
+  List_init(&r->waiting_list);
   return r;
 }
 
 int Mailbox_free(Mailbox* r) {
   assert(r->messages_list.first==0);
   assert(r->messages_list.last==0);
+  assert(r->waiting_list.first==0);
+  assert(r->waiting_list.last==0);
   return PoolAllocator_releaseBlock(&_mailboxes_allocator, r);
 }
 
-Mailbox* MailboxList_byId(MailboxList* l, int id) {
+/*Mailbox* MailboxList_byId(MailboxList* l, int id) {
   ListItem* aux=l->first;
   while(aux){
     Mailbox* r=(Mailbox*)aux;
@@ -57,7 +58,7 @@ Mailbox* MailboxList_byId(MailboxList* l, int id) {
     aux=aux->next;
   }
   return 0;
-}
+}*/
 
 
 

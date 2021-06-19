@@ -5,12 +5,13 @@
 #include "disastrOS_syscalls.h"
 #include "disastrOS_resource.h"
 #include "disastrOS_descriptor.h"
+#include "disastrOS_mailbox.h"
 
 
 void internal_openResource(){
   //1 get from the PCB the resource id of the resource to open
   int id=running->syscall_args[0];
-  int type=running->syscall_args[1];
+  int type=running->syscall_args[1]; //type=1 mailbox
   int open_mode=running->syscall_args[2];
 
   Resource* res=ResourceList_byId(&resources_list, id);
@@ -24,8 +25,14 @@ void internal_openResource(){
       running->syscall_retvalue=DSOS_ERESOURCECREATE;
       return;
     }
-    res=Resource_alloc(id, type);
-    List_insert(&resources_list, resources_list.last, (ListItem*) res);
+    if(type == 1){
+      res = (Resource*) Mailbox_alloc(id,type);
+      List_insert(&resources_list, resources_list.last, (ListItem*) res);
+    }
+    else{
+      res=Resource_alloc(id, type);
+      List_insert(&resources_list, resources_list.last, (ListItem*) res);
+    }
   }
 
   // at this point we should have the resource, if not something was wrong
