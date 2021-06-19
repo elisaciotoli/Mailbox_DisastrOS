@@ -11,6 +11,7 @@
 #include "disastrOS_timer.h"
 #include "disastrOS_resource.h"
 #include "disastrOS_descriptor.h"
+#include "disastrOS_mailbox.h"
 
 FILE* log_file=NULL;
 PCB* init_pcb;
@@ -23,6 +24,9 @@ ListHead timer_list;
 
 // a resource can be a device, a file or an ipc thing
 ListHead resources_list;
+ListHead mailboxes_list;
+
+volatile int message_counter = 0;
 
 SyscallFunctionType syscall_vector[DSOS_MAX_SYSCALLS];
 int syscall_numarg[DSOS_MAX_SYSCALLS];
@@ -140,6 +144,8 @@ void disastrOS_start(void (*f)(void*), void* f_args, char* logfile){
   PCB_init();
   Timer_init();
   Resource_init();
+  Mailbox_init();
+  Message_init();
   Descriptor_init();
   init_pcb=0;
 
@@ -189,6 +195,7 @@ void disastrOS_start(void (*f)(void*), void* f_args, char* logfile){
   List_init(&waiting_list);
   List_init(&zombie_list);
   List_init(&resources_list);
+  List_init(&mailboxes_list);
   List_init(&timer_list);
 
 
