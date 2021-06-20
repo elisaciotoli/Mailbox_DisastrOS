@@ -78,6 +78,7 @@ void initFunction(void* args) {
   printf("hello, I am init and I just started\n");
   disastrOS_spawn(sleeperFunction, 0);
 
+  //create mailbox
   int fd=disastrOS_openResource(MAILBOX_ID,1,DSOS_CREATE);
   if(fd<0){
     printf("[INIT] FATAL: Cannot create mailbox! Exiting...\n");
@@ -107,6 +108,12 @@ void initFunction(void* args) {
     printf("initFunction, child: %d terminated, retval:%d, alive: %d \n",
 	   pid, retval, --alive_children);
   }
+
+  /*//destroy mailbox
+  int tmp=disastrOS_destroyResource(MAILBOX_ID);
+  printf("destroy = %d\n",tmp);
+  if(tmp<0) printf("[INIT] Error: Cannot destroy mailbox!\n");*/
+
   printf("shutdown!\n");
   disastrOS_shutdown();
 }
