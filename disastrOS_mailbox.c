@@ -82,7 +82,5 @@ Message* Message_alloc(char* text){
 }
 
 int Message_free(Message* r) {
-  //assert(r->messages_list.first==0);
-  //assert(r->messages_list.last==0);
   return PoolAllocator_releaseBlock(&_messages_allocator, r);
 }

@@ -8,10 +8,11 @@
 
 void internal_receive() {
   int id=running->syscall_args[0];
+  char** buffer=(char**) running->syscall_args[1];
   
   Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,id);
   if(mailbox == NULL){
-    printf("[RECEIVE] Error: Cannot find mailbox!\n");
+    printf("[RECEIVE %d] Error: Cannot find mailbox!\n",disastrOS_getpid());
     return;
   }
   
@@ -27,26 +28,26 @@ void internal_receive() {
     //put running pointer in the mailbox waiting list
     PCBPtr* running_ptr = PCBPtr_alloc(running);
     if(List_insert(&mailbox->waiting_list,mailbox->waiting_list.last, (ListItem*) running_ptr) == 0)
-      printf("[RECEIVE] Error: Cannot write in mailbox waiting list\n");
+      printf("[RECEIVE %d] Error: Cannot write in mailbox waiting list\n",disastrOS_getpid());
     
     // pick the next running
     PCB* next_running= (PCB*) List_detach(&ready_list, ready_list.first);
     next_running->status=Running;
     running=next_running;
-    //disastrOS_printStatus();
     return;
   }
 
-  printf("[RECEIVE] detaching message\n");
+  //receive message
+  printf("[RECEIVE %d] detaching message\n",disastrOS_getpid());
   running->syscall_retvalue=0;
   Message* message = (Message*) List_detach(&mailbox->messages_list,mailbox->messages_list.first);
-  char* text = message->text;
-  printf("[RECEIVE] message received = %s\n",text);
+  *buffer = message->text;
   if(Message_free(message)<0) 
-    printf("[RECEIVE] Errore: Cannot free message!\n");
+    printf("[RECEIVE %d] Errore: Cannot free message!\n",disastrOS_getpid());
 
+  //if necessary unblock processes waiting to write
   if((&mailbox->waiting_list)->size > 0){
-    printf("[RECEIVE] putting blocked processes in ready\n");
+    printf("[RECEIVE %d] putting blocked processes in ready\n",disastrOS_getpid());
     ListItem* aux=List_detach(&mailbox->waiting_list,mailbox->waiting_list.first);
     while(aux){
       PCBPtr* pcb_aux = (PCBPtr*)aux;
@@ -54,10 +55,9 @@ void internal_receive() {
       List_detach(&waiting_list, (ListItem*) pcb_to_wake);
       pcb_to_wake->status=Ready;
       List_insert(&ready_list, ready_list.last, (ListItem*) pcb_to_wake);
-      //disastrOS_printStatus();
       aux=aux->next;
     }
-    printf("[RECEIVE] all blocked processes in ready");
+    printf("[RECEIVE %d] all blocked processes in ready",disastrOS_getpid());
   }
   printf("[RECEIVE %d] exiting\n",disastrOS_getpid());
   

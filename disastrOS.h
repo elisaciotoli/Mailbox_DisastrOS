@@ -28,7 +28,7 @@ void disastrOS_preempt();
 void disastrOS_spawn(void (*f)(void*), void* args );
 void disastrOS_shutdown();
 int disastrOS_send(int mailbox, char* message);
-int disastrOS_receive(int mailbox);
+int disastrOS_receive(int mailbox,char** buffer);
 
 // timers
 void disastrOS_sleep(int);

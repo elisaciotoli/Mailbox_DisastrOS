@@ -18,24 +18,23 @@ void sleeperFunction(void* args){
 void senderFunction(void* args){
   printf("[SENDER %d] in\n",disastrOS_getpid());
 
+  //open mailbox
   int fd=disastrOS_openResource(MAILBOX_ID,1,0);
   if(fd < 0){
     printf("[SENDER %d] Error: Cannot open mailbox resource! Exiting...\n", disastrOS_getpid()); 
     disastrOS_exit(disastrOS_getpid()+1);
   } 
-  //printf("[SENDER %d] fd=%d\n", disastrOS_getpid(), fd);
 
   //send
   char* message = "hi I'm writing in the mailbox";
   for(int i=0; i<130; i++){
     int tmp = disastrOS_send(MAILBOX_ID,message);
-    //printf("[SENDER %d] tmp = %d\n",disastrOS_getpid(),tmp);
     while(tmp == DSOS_EMAILBOXFULL){
       tmp = disastrOS_send(MAILBOX_ID,message);
-      //printf("[SENDER %d] tmp = %d\n",disastrOS_getpid(),tmp);
     }
   }
 
+  //close mailbox
   fd=disastrOS_closeResource(fd);
   if(fd<0)
     printf("[SENDER %d] Error: Cannot close mailbox resource!\n",disastrOS_getpid());
@@ -47,23 +46,24 @@ void senderFunction(void* args){
 void receiverFunction(void* args){
   printf("[RECEIVER %d] in\n",disastrOS_getpid());
 
+  //open mailbox
   int fd=disastrOS_openResource(MAILBOX_ID,1,0);
   if(fd < 0){
     printf("[RECEIVER %d] Error: Cannot open mailbox resource! Exiting...\n", disastrOS_getpid()); 
     disastrOS_exit(disastrOS_getpid()+1);
   } 
-  //printf("[RECEIVER %d] fd=%d\n", disastrOS_getpid(), fd);
 
   //receive
   for(int i=0; i<130; i++){
-    int tmp = disastrOS_receive(MAILBOX_ID);
-    //printf("[RECEIVER %d] tmp = %d\n",disastrOS_getpid(),tmp);
+    char* buffer = 0;
+    int tmp = disastrOS_receive(MAILBOX_ID,&buffer);
     while(tmp == DSOS_EMAILBOXEMPTY){
-      tmp = disastrOS_receive(MAILBOX_ID);
-      //printf("[RECEIVER %d] tmp = %d\n",disastrOS_getpid(),tmp);
+      tmp = disastrOS_receive(MAILBOX_ID,&buffer);
     }
+    printf("[RECEIVER %d] message received = %s\n",disastrOS_getpid(),buffer);
   }
 
+  //close mailbox
   fd=disastrOS_closeResource(fd);
   if(fd<0)
     printf("[RECEIVER %d] Error: Cannot close mailbox resource!\n",disastrOS_getpid());
@@ -91,14 +91,13 @@ void initFunction(void* args) {
     disastrOS_spawn(receiverFunction, 0);
     alive_children++;
   }
-  
   //spawn sender children
   for (int i=0; i<MAX_SENDERS; ++i) {
     disastrOS_spawn(senderFunction, 0);
     alive_children++;
   }
   
-
+  
   disastrOS_printStatus();
   //wait for children to terminate
   int retval;

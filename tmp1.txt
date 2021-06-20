@@ -1,0 +1,1721 @@
+start
+****************** DisastrOS ******************
+Running: [pid: 0, child: ()]
+Timers: []
+Resources: {
+}
+
+Ready: {
+}
+
+Waiting: {
+}
+
+Zombie: {
+}
+
+***********************************************
+
+hello, I am init and I just started
+****************** DisastrOS ******************
+Running: [pid: 0, child: (1, 2, 3, 4, 5)]
+Timers: []
+Resources: {
+	id: 3, type:1, pids:[(pid: 0, fd: 0, rid:3)]
+}
+
+Ready: {
+	[pid: 1, child: ()],
+	[pid: 2, child: ()],
+	[pid: 3, child: ()],
+	[pid: 4, child: ()],
+	[pid: 5, child: ()]
+}
+
+Waiting: {
+}
+
+Zombie: {
+}
+
+***********************************************
+
+Hello, I am the sleeper, and I sleep 1
+time: 1
+[RECEIVER 2] in
+[RECEIVE 2] in wait 
+[RECEIVER 3] in
+[RECEIVE 3] in wait 
+[SENDER 4] in
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] putting blocked processes in ready
+[SEND 4] all blocked processes in ready
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SEND 4] in wait 
+[SENDER 5] in
+[SEND 5] in wait 
+time: 2
+[RECEIVE 2] detaching message
+[RECEIVE 2] putting blocked processes in ready
+[RECEIVE 2] all blocked processes in ready[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] putting blocked processes in ready
+[RECEIVE 2] all blocked processes in ready[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] in wait 
+[RECEIVE 3] in wait 
+time: 3
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] putting blocked processes in ready
+[SEND 4] all blocked processes in ready
+[SEND 4] exiting
+[SEND 4] inserting message
+[SEND 4] message inserted = hi I'm writing in the mailbox
+[SEND 4] exiting
+[SENDER 4] terminating
+****************** DisastrOS ******************
+Running: [pid: 0, child: (1, 2, 3, 5)]
+Timers: []
+Resources: {
+	id: 3, type:1, pids:[(pid: 0, fd: 0, rid:3), (pid: 0, fd: 2, rid:3), (pid: 0, fd: 3, rid:3), (pid: 0, fd: 5, rid:3)]
+}
+
+Ready: {
+	[pid: 5, child: ()],
+	[pid: 1, child: ()],
+	[pid: 2, child: ()],
+	[pid: 3, child: ()]
+}
+
+Waiting: {
+}
+
+Zombie: {
+}
+
+***********************************************
+
+initFunction, child: 4 terminated, retval:5, alive: 3 
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] in wait 
+time: 4
+[RECEIVE 2] detaching message
+[RECEIVE 2] putting blocked processes in ready
+[RECEIVE 2] all blocked processes in ready[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVE 2] detaching message
+[RECEIVE 2] exiting
+[RECEIVER 2] message received = hi I'm writing in the mailbox
+[RECEIVER 2] terminating
+****************** DisastrOS ******************
+Running: [pid: 0, child: (1, 3, 5)]
+Timers: []
+Resources: {
+	id: 3, type:1, pids:[(pid: 0, fd: 0, rid:3), (pid: 0, fd: 3, rid:3), (pid: 0, fd: 5, rid:3)]
+}
+
+Ready: {
+	[pid: 3, child: ()],
+	[pid: 1, child: ()],
+	[pid: 5, child: ()]
+}
+
+Waiting: {
+}
+
+Zombie: {
+}
+
+***********************************************
+
+initFunction, child: 2 terminated, retval:3, alive: 2 
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] in wait 
+time: 5
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] putting blocked processes in ready
+[SEND 5] all blocked processes in ready
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SEND 5] inserting message
+[SEND 5] message inserted = hi I'm writing in the mailbox
+[SEND 5] exiting
+[SENDER 5] terminating
+****************** DisastrOS ******************
+Running: [pid: 0, child: (1, 3)]
+Timers: []
+Resources: {
+	id: 3, type:1, pids:[(pid: 0, fd: 0, rid:3), (pid: 0, fd: 3, rid:3)]
+}
+
+Ready: {
+	[pid: 1, child: ()],
+	[pid: 3, child: ()]
+}
+
+Waiting: {
+}
+
+Zombie: {
+}
+
+***********************************************
+
+initFunction, child: 5 terminated, retval:6, alive: 1 
+time: 6
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVE 3] detaching message
+[RECEIVE 3] exiting
+[RECEIVER 3] message received = hi I'm writing in the mailbox
+[RECEIVER 3] terminating
+****************** DisastrOS ******************
+Running: [pid: 0, child: (1)]
+Timers: []
+Resources: {
+	id: 3, type:1, pids:[(pid: 0, fd: 0, rid:3)]
+}
+
+Ready: {
+	[pid: 1, child: ()]
+}
+
+Waiting: {
+}
+
+Zombie: {
+}
+
+***********************************************
+
+initFunction, child: 3 terminated, retval:4, alive: 0 
+shutdown!
