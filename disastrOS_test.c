@@ -23,12 +23,18 @@ void senderFunction(void* args){
     printf("[SENDER %d] Error: Cannot open mailbox resource! Exiting...\n", disastrOS_getpid()); 
     disastrOS_exit(disastrOS_getpid()+1);
   } 
-  printf("[SENDER %d] fd=%d\n", disastrOS_getpid(), fd);
+  //printf("[SENDER %d] fd=%d\n", disastrOS_getpid(), fd);
 
   //send
   char* message = "hi I'm writing in the mailbox";
-  if(disastrOS_send(MAILBOX_ID,message) < 0)
-    printf("[SENDER %d] ERROR: Cannot send message!\n",disastrOS_getpid());
+  for(int i=0; i<130; i++){
+    int tmp = disastrOS_send(MAILBOX_ID,message);
+    //printf("[SENDER %d] tmp = %d\n",disastrOS_getpid(),tmp);
+    while(tmp == DSOS_EMAILBOXFULL){
+      tmp = disastrOS_send(MAILBOX_ID,message);
+      //printf("[SENDER %d] tmp = %d\n",disastrOS_getpid(),tmp);
+    }
+  }
 
   fd=disastrOS_closeResource(fd);
   if(fd<0)
@@ -46,11 +52,17 @@ void receiverFunction(void* args){
     printf("[RECEIVER %d] Error: Cannot open mailbox resource! Exiting...\n", disastrOS_getpid()); 
     disastrOS_exit(disastrOS_getpid()+1);
   } 
-  printf("[RECEIVER %d] fd=%d\n", disastrOS_getpid(), fd);
+  //printf("[RECEIVER %d] fd=%d\n", disastrOS_getpid(), fd);
 
   //receive
-  if(disastrOS_receive(MAILBOX_ID) < 0)
-    printf("[RECEIVER %d] ERROR: Cannot send message!\n",disastrOS_getpid());
+  for(int i=0; i<130; i++){
+    int tmp = disastrOS_receive(MAILBOX_ID);
+    //printf("[RECEIVER %d] tmp = %d\n",disastrOS_getpid(),tmp);
+    while(tmp == DSOS_EMAILBOXEMPTY){
+      tmp = disastrOS_receive(MAILBOX_ID);
+      //printf("[RECEIVER %d] tmp = %d\n",disastrOS_getpid(),tmp);
+    }
+  }
 
   fd=disastrOS_closeResource(fd);
   if(fd<0)
