@@ -19,7 +19,7 @@ void internal_send() {
   //wait
   if((&mailbox->messages_list)->size == MAX_NUM_MESSAGES_PER_MAILBOX){
 
-    printf("[SEND %d] in wait \n",disastrOS_getpid());
+    //printf("[SEND %d] in wait \n",disastrOS_getpid());
 
     //put running in waiting list
     running->status=Waiting;
@@ -38,7 +38,7 @@ void internal_send() {
   }
 
   //send message
-  printf("[SEND %d] inserting message\n",disastrOS_getpid());
+  //printf("[SEND %d] inserting message\n",disastrOS_getpid());
   running->syscall_retvalue=0;
   Message* mes = Message_alloc(text);
   List_insert(&mailbox->messages_list,mailbox->messages_list.last,(ListItem*) mes);
@@ -47,7 +47,7 @@ void internal_send() {
 
   //if necessary unblock processes waiting to read
   if((&mailbox->waiting_list)->size > 0){
-    printf("[SEND %d] putting blocked processes in ready\n",disastrOS_getpid());
+    //printf("[SEND %d] putting blocked processes in ready\n",disastrOS_getpid());
     ListItem* aux=List_detach(&mailbox->waiting_list,mailbox->waiting_list.first);
     while(aux){
       PCBPtr* pcb_aux = (PCBPtr*)aux;
@@ -60,9 +60,9 @@ void internal_send() {
       else 
         aux = NULL;
     }
-    printf("[SEND %d] all blocked processes in ready\n",disastrOS_getpid());
+    //printf("[SEND %d] all blocked processes in ready\n",disastrOS_getpid());
   }
-  printf("[SEND %d] exiting\n",disastrOS_getpid());
+  //printf("[SEND %d] exiting\n",disastrOS_getpid());
   return;
 
 }

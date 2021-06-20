@@ -42,9 +42,9 @@ Mailbox* Mailbox_alloc(int id, int type){
 }
 
 int Mailbox_free(Mailbox* r) {
-  //assert(r->waiting_list.first==0);
-  //assert(r->waiting_list.last==0);
-  printf("resource free = %d\n",Resource_free(&r->resource));
+  assert(r->waiting_list.first==0);
+  assert(r->waiting_list.last==0);
+  Resource_free(&r->resource);
   return PoolAllocator_releaseBlock(&_mailboxes_allocator, r);
 }
 

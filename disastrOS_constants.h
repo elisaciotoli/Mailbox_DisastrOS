@@ -55,7 +55,6 @@
 #define MAX_MESSAGE_LENGTH 32
 #define MAX_SENDERS 2
 #define MAX_RECEIVERS 2
-#define MAILBOX_ID 3
 
 // scheduling
 #define ALPHA 0.5f
