@@ -10,6 +10,7 @@ void internal_send() {
   int id = running->syscall_args[0];
   char* text = (char*)running->syscall_args[1];
 
+  //find the mailbox
   Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,id);
   if(mailbox == NULL){
     printf("[SEND %d] Error: Cannot find mailbox!\n",disastrOS_getpid());
