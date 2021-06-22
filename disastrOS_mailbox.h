@@ -12,7 +12,7 @@ typedef struct Message{
  ListItem list;
  char* text;
  int size;
-}Message;
+} Message;
 
 void Mailbox_init();
 Mailbox* Mailbox_alloc(int id, int type);
