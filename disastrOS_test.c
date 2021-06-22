@@ -8,7 +8,8 @@
 
 // we need this to handle the sleep state
 void sleeperFunction(void* args){
-  printf("Hello, I am the sleeper, and I sleep %d\n",disastrOS_getpid());
+  if(_PRINTFUL_)  
+    printf("Hello, I am the sleeper, and I sleep %d\n",disastrOS_getpid());
   while(1) {
     getc(stdin);
     disastrOS_printStatus();
@@ -16,25 +17,28 @@ void sleeperFunction(void* args){
 }
 
 void senderFunction(void* args){
-  printf("[SENDER %d] in\n",disastrOS_getpid());
+  if(_PRINTFUL_)
+    printf("[SENDER %d] in\n",disastrOS_getpid());
 
   int* _args = (int*) args;
   int mailbox_id = *_args;
 
   //open mailbox
-  int fd=disastrOS_openResource(mailbox_id,1,0);
+  int fd=disastrOS_openResource(mailbox_id,MAILBOX_TYPE,0);
   if(fd < 0){
     printf("[SENDER %d] Error: Cannot open mailbox resource! Exiting...\n", disastrOS_getpid()); 
-    disastrOS_exit(disastrOS_getpid()+1);
+    disastrOS_exit(0);
   } 
 
+  int messages_counter = 0;
   //send
   char* message = "hi I'm writing in the mailbox";
-  for(int i=0; i<130; i++){
+  for(int i=0; i<NUM_MESSAGES_SENDER; i++){
     int tmp = disastrOS_send(mailbox_id,message);
     while(tmp == DSOS_EMAILBOXFULL){
       tmp = disastrOS_send(mailbox_id,message);
     }
+    messages_counter++;
   }
 
   //close mailbox
@@ -42,31 +46,36 @@ void senderFunction(void* args){
   if(fd<0)
     printf("[SENDER %d] Error: Cannot close mailbox resource!\n",disastrOS_getpid());
 
-  printf("[SENDER %d] terminating\n", disastrOS_getpid());
-  disastrOS_exit(disastrOS_getpid()+1);
+  if(_PRINTFUL_)
+    printf("[SENDER %d] terminating\n", disastrOS_getpid());
+  disastrOS_exit(messages_counter);
 }
 
 void receiverFunction(void* args){
-  printf("[RECEIVER %d] in\n",disastrOS_getpid());
+  if(_PRINTFUL_)
+    printf("[RECEIVER %d] in\n",disastrOS_getpid());
 
   int* _args = (int*) args;
   int mailbox_id = *_args;
 
   //open mailbox
-  int fd=disastrOS_openResource(mailbox_id,1,0);
+  int fd=disastrOS_openResource(mailbox_id,MAILBOX_TYPE,0);
   if(fd < 0){
     printf("[RECEIVER %d] Error: Cannot open mailbox resource! Exiting...\n", disastrOS_getpid()); 
-    disastrOS_exit(disastrOS_getpid()+1);
+    disastrOS_exit(0);
   } 
 
+  int messages_counter = 0;
   //receive
-  for(int i=0; i<130; i++){
+  for(int i=0; i<NUM_MESSAGES_RECEIVER; i++){
     char* buffer = 0;
     int tmp = disastrOS_receive(mailbox_id,&buffer);
     while(tmp == DSOS_EMAILBOXEMPTY){
       tmp = disastrOS_receive(mailbox_id,&buffer);
     }
-    printf("[RECEIVER %d] message received = %s\n",disastrOS_getpid(),buffer);
+    if(_PRINTFUL_)
+      printf("[RECEIVER %d] message received = %s\n",disastrOS_getpid(),buffer);
+    messages_counter++;
   }
 
   //close mailbox
@@ -74,22 +83,26 @@ void receiverFunction(void* args){
   if(fd<0)
     printf("[RECEIVER %d] Error: Cannot close mailbox resource!\n",disastrOS_getpid());
 
-  printf("[RECEIVER %d] terminating\n", disastrOS_getpid());
-  disastrOS_exit(disastrOS_getpid()+1);
+  if(_PRINTFUL_)
+    printf("[RECEIVER %d] terminating\n", disastrOS_getpid());
+  disastrOS_exit(-messages_counter);
 }
 
 void childFunction(void* args){
-  printf("[CHILD %d] in\n",disastrOS_getpid());
+  if(_PRINTFUL_)
+    printf("[CHILD %d] in\n",disastrOS_getpid());
 
   int* _args = (int*) args;
   int mailbox_id = *_args;
 
+
   //create mailbox
-  printf("[CHILD %d] Creating mailbox = %d\n",disastrOS_getpid(),mailbox_id);
-  int fd=disastrOS_openResource(mailbox_id,1,DSOS_CREATE);
+  if(_PRINTFUL_)
+    printf("[CHILD %d] Creating mailbox = %d\n",disastrOS_getpid(),mailbox_id);
+  int fd=disastrOS_openResource(mailbox_id,MAILBOX_TYPE,DSOS_CREATE);
   if(fd<0){
     printf("[CHILD %d] FATAL: Cannot create mailbox! Exiting...\n",disastrOS_getpid());
-    disastrOS_exit(disastrOS_getpid()+1);
+    disastrOS_exit(0);
   }
 
   int alive_children=0;
@@ -105,44 +118,55 @@ void childFunction(void* args){
   }
   
  
+  //count messages left in the mailbox
+  int messages_counter = 0;
 
-  disastrOS_printStatus();
-  //wait for children to terminate
+  if(_PRINTFUL_)
+    disastrOS_printStatus();
+
+  //wait for children to terminate and count messages
   int retval;
   int pid;
   while(alive_children>0 && (pid=disastrOS_wait(0, &retval))>=0){ 
-    //disastrOS_printStatus();
-    printf("[CHILD %d], child: %d terminated, retval:%d, alive: %d \n",
-	   disastrOS_getpid(),pid, retval, --alive_children);
+    if(_PRINTFUL_)
+      printf("[CHILD %d], child: %d terminated, retval:%d, alive: %d \n", disastrOS_getpid(),pid, retval, --alive_children);
+    messages_counter += retval;
   }
+  
+  printf("\n\t[CHILD %d] (messages sent - messages received) = %d\n\n",disastrOS_getpid(),messages_counter);
 
-  disastrOS_exit(disastrOS_getpid()+1);
+  disastrOS_exit(messages_counter);
 }
 
 
 void initFunction(void* args) {
-  disastrOS_printStatus();
-  printf("hello, I am init and I just started\n");
+  if(_PRINTFUL_)
+    disastrOS_printStatus();
+  if(_PRINTFUL_)
+    printf("hello, I am init and I just started\n");
   disastrOS_spawn(sleeperFunction, 0);
 
-  printf("I feel like to spawn 10 nice threads\n");
   int alive_children=0;
   int _args[MAX_NUM_MAILBOXES] = {0};
-  for (int i=0; i< MAX_NUM_MAILBOXES; ++i) {
+  for (int i=0; i < MAX_NUM_MAILBOXES; ++i) {
     _args[i] = i;
     disastrOS_spawn(childFunction, (void*) &_args[i]);
     alive_children++;
   }
 
-  //disastrOS_printStatus();
+  int total = 0;
   int retval;
   int pid;
-  while(alive_children>0 && (pid=disastrOS_wait(0, &retval))>=0){ 
-    //disastrOS_printStatus();
-    printf("initFunction, child: %d terminated, retval:%d, alive: %d \n",
-	   pid, retval, alive_children);
+  while(alive_children>0 && (pid=disastrOS_wait(0, &retval))>=0){
+    if(_PRINTFUL_)
+      printf("initFunction, child: %d terminated, retval:%d, alive: %d \n", pid, retval, alive_children);
+    total += retval;
     --alive_children;
   }
+
+  printf("\n\nTOTAL SCORE %d ->",total);
+  if(total == 0) printf(" SUCCESS :)\n\n");
+  else printf(" FAILURE :(\n\n");
 
   //destroy mailboxes
   for(int i=0; i<MAX_NUM_MAILBOXES; i++){

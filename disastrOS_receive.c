@@ -19,7 +19,8 @@ void internal_receive() {
   
   if((&mailbox->messages_list)->size == 0){
 
-    //printf("[RECEIVE %d] in wait \n",disastrOS_getpid());
+    if(_PRINTFUL_)
+      printf("[RECEIVE %d] in wait \n",disastrOS_getpid());
 
     //put running in waiting list
     running->status=Waiting;
@@ -39,16 +40,22 @@ void internal_receive() {
   }
 
   //receive message
-  //printf("[RECEIVE %d] detaching message\n",disastrOS_getpid());
+  if(_PRINTFUL_)
+    printf("[RECEIVE %d] detaching message\n",disastrOS_getpid());
+
   running->syscall_retvalue=0;
   Message* message = (Message*) List_detach(&mailbox->messages_list,mailbox->messages_list.first);
   *buffer = message->text;
+
   if(Message_free(message)<0) 
     printf("[RECEIVE %d] Errore: Cannot free message!\n",disastrOS_getpid());
 
   //if necessary unblock processes waiting to write
   if((&mailbox->waiting_list)->size > 0){
-    //printf("[RECEIVE %d] putting blocked processes in ready\n",disastrOS_getpid());
+
+    if(_PRINTFUL_)
+      printf("[RECEIVE %d] putting blocked processes in ready\n",disastrOS_getpid());
+
     ListItem* aux=List_detach(&mailbox->waiting_list,mailbox->waiting_list.first);
     while(aux){
       PCBPtr* pcb_aux = (PCBPtr*)aux;
@@ -56,11 +63,18 @@ void internal_receive() {
       List_detach(&waiting_list, (ListItem*) pcb_to_wake);
       pcb_to_wake->status=Ready;
       List_insert(&ready_list, ready_list.last, (ListItem*) pcb_to_wake);
-      aux=aux->next;
+      if((&mailbox->waiting_list)->size > 0)
+        aux=List_detach(&mailbox->waiting_list,mailbox->waiting_list.first);
+      else 
+        aux = NULL;
     }
-    //printf("[RECEIVE %d] all blocked processes in ready",disastrOS_getpid());
+    
+    if(_PRINTFUL_)
+      printf("[RECEIVE %d] all blocked processes in ready\n",disastrOS_getpid());
   }
-  //printf("[RECEIVE %d] exiting\n",disastrOS_getpid());
+  
+  if(_PRINTFUL_)
+    printf("[RECEIVE %d] exiting\n",disastrOS_getpid());
   
   return;
   
