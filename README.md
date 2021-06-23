@@ -32,8 +32,9 @@ The 'type' of the mailbox resource can be set in disastrOS_constants.h file modi
 
 
 Processes can exchange messages through a mailbox.
-> - Sending a message through a mailbox will block the process if the message queue is full.
-> - Receiving a message from a mailbox will block the process if the message queue is empty.
+> Sending a message through a mailbox will block the process if the message queue is full.
+
+> Receiving a message from a mailbox will block the process if the message queue is empty.
 
 DisastrOS manages the send and the receive calls using the following structure for messages:
 
@@ -101,16 +102,16 @@ The following code allows to run the test program:
 
 > The test program creates MAX_NUM_MAILBOXES mailboxes and spawns MAX_SENDERS senders and MAX_RECEIVERS receivers for each mailbox. Each sender/receiver sends/receives NUM_MESSAGES_SENDER/NUM_MESSAGES_RECEIVER messages.
 
->> The constants are defined (and can be modified) in disastrOS_constants.h file:
+> The constants are defined (and can be modified) in disastrOS_constants.h file:
 ```c
-#define MAX_NUM_MAILBOXES 5
-#define MAX_SENDERS 5
-#define MAX_RECEIVERS 5
+#define MAX_NUM_MAILBOXES 8
+#define MAX_SENDERS 10
+#define MAX_RECEIVERS 10
 #define NUM_MESSAGES_SENDER 130
 #define NUM_MESSAGES_RECEIVER 130
 ```
 
->> The test program succeeds if the number of messages sent is equal to the number of messages received (total score = 0).
+> The test program succeeds if the number of messages sent is equal to the number of messages received (total score = 0).
 
 >In order to follow step by step how the test runs the following constant has to be redefined with a value different from 0.
 ```c

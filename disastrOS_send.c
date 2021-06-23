@@ -61,6 +61,7 @@ void internal_send() {
     while(aux){
       PCBPtr* pcb_aux = (PCBPtr*)aux;
       PCB* pcb_to_wake=(PCB*)pcb_aux->pcb;
+      PCBPtr_free(pcb_aux);
       List_detach(&waiting_list, (ListItem*) pcb_to_wake);
       pcb_to_wake->status=Ready;
       List_insert(&ready_list, ready_list.last, (ListItem*) pcb_to_wake);
