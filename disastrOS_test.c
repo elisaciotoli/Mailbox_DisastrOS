@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <poll.h>
+#include <string.h>
 
 #include "disastrOS.h"
 #include "disastrOS_mailbox.h"
@@ -68,13 +69,13 @@ void receiverFunction(void* args){
   int messages_counter = 0;
   //receive
   for(int i=0; i<NUM_MESSAGES_RECEIVER; i++){
-    char* buffer = 0;
-    int tmp = disastrOS_receive(mailbox_id,&buffer);
+    char buffer[MAX_MESSAGE_LENGTH] = "";
+    int tmp = disastrOS_receive(mailbox_id,buffer);
     while(tmp == DSOS_EMAILBOXEMPTY){
-      tmp = disastrOS_receive(mailbox_id,&buffer);
+      tmp = disastrOS_receive(mailbox_id,buffer);
     }
     if(_PRINTFUL_)
-      printf("[RECEIVER %d] message received = %s\n",disastrOS_getpid(),buffer);
+      printf("[RECEIVER %d] received message of %d bytes\n",disastrOS_getpid(),(int)strlen(buffer));
     messages_counter++;
   }
 

@@ -41,7 +41,7 @@ DisastrOS manages the send and the receive calls using the following structure f
 ```c
 typedef struct Message{
  ListItem list;
- char* text;
+ char text[MAX_MESSAGE_LENGTH];
  int size;
 } Message;
 ```
@@ -65,7 +65,7 @@ disastrOS_send(mailbox_id,"message");
 ```
 - [Receive] - Receive a message from the mailbox (and save it in the buffer 'buffer')
 ```c
-disastrOS_receive(mailbox_id,&buffer);
+disastrOS_receive(mailbox_id,buffer);
 ```
 - [Close] - Close the descriptor 'fd' of the mailbox
 ```c

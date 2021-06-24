@@ -8,7 +8,7 @@
 
 void internal_receive() {
   int id=running->syscall_args[0];
-  char** buffer=(char**) running->syscall_args[1];
+  char* buffer=(char*) running->syscall_args[1];
   
   //find the mailbox
   Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,id);
@@ -45,7 +45,15 @@ void internal_receive() {
 
   running->syscall_retvalue=0;
   Message* message = (Message*) List_detach(&mailbox->messages_list,mailbox->messages_list.first);
-  *buffer = message->text;
+  
+  //copy message in buffer
+  int cnt = 0;
+  while(cnt < MAX_MESSAGE_LENGTH && message->text[cnt] != '\0'){
+    buffer[cnt] = message->text[cnt];
+    cnt++;
+  }
+  if(cnt < MAX_MESSAGE_LENGTH)
+    buffer[cnt] = '\0';
 
   if(Message_free(message)<0) 
     printf("[RECEIVE %d] Errore: Cannot free message!\n",disastrOS_getpid());

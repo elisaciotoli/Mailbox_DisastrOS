@@ -64,8 +64,17 @@ Message* Message_alloc(char* text){
   if (!r)
     return 0;
   r->list.prev=r->list.next=0;
-  r->text = text;
-  r->size = sizeof(text);
+  
+  //copy message
+  int cnt = 0;
+  while(cnt < MAX_MESSAGE_LENGTH && text[cnt] != '\0'){
+    r->text[cnt] = text[cnt];
+    cnt++;
+  }
+  if(cnt < MAX_MESSAGE_LENGTH)
+    r->text[cnt] = '\0';
+
+  r->size = cnt;
   return r;
 }
 

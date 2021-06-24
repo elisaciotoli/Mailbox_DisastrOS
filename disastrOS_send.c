@@ -48,7 +48,7 @@ void internal_send() {
   List_insert(&mailbox->messages_list,mailbox->messages_list.last,(ListItem*) mes);
 
   if(_PRINTFUL_)
-    printf("[SEND %d] message inserted = %s\n",disastrOS_getpid(),text);
+    printf("[SEND %d] message inserted of %d bytes\n",disastrOS_getpid(),mes->size);
 
 
   //if necessary unblock processes waiting to read

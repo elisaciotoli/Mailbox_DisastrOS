@@ -10,7 +10,7 @@ typedef struct Mailbox{
 
 typedef struct Message{
  ListItem list;
- char* text;
+ char text[MAX_MESSAGE_LENGTH];
  int size;
 } Message;
 

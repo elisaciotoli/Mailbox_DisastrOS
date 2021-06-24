@@ -301,7 +301,7 @@ int disastrOS_send(int mailbox, char* message) {
 }
 
 //new
-int disastrOS_receive(int mailbox,char** buffer) {
+int disastrOS_receive(int mailbox,char* buffer) {
   return disastrOS_syscall(DSOS_CALL_RECEIVE, mailbox,buffer);
 }
 

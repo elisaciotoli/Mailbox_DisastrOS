@@ -60,7 +60,7 @@
 #define NUM_MESSAGES_SENDER 130
 #define NUM_MESSAGES_RECEIVER 130
 #define MAILBOX_TYPE 1
-#define _PRINTFUL_ 1
+#define _PRINTFUL_ 0
 
 // scheduling
 #define ALPHA 0.5f
