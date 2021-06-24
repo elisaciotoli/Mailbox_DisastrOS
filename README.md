@@ -5,7 +5,7 @@
 
 The project implements an IPC system based on message queues in DisastrOS to allow blocking communication between processes.
 
-DisastrOS has been modified in order to support the possibility for processes to use mailboxes with the following structure:
+DisastrOS has been modified in order to support the possibility for processes to use mailboxes with the following structure: for each mailbox M we keep information regarding the corresponding resource R, the list of messages added to the queue and the list of processes waiting because the mailbox is empty/full (at any instant processes can be waiting either because M is empty or because M is full). 
 
 ```c
 typedef struct Mailbox{
@@ -14,7 +14,7 @@ typedef struct Mailbox{
  ListHead waiting_list;
 } Mailbox;
 ```
-Mailboxes can be opened and used through their 'id'. The 'id' is one of the fields of the Resource structure:
+Mailboxes can be opened through their 'id'. The 'id' is one of the fields of the Resource structure:
 
 ``` c
 typedef struct {
@@ -59,13 +59,13 @@ int fd = disastrOS_openResource(mailbox_id,MAILBOX_TYPE,DSOS_CREATE);
 ```c
 int fd = disastrOS_openResource(mailbox_id,MAILBOX_TYPE,0);
 ```
-- [Send] - Send the message "message" through the mailbox
+- [Send] - Send the message "message" through the mailbox using a descriptor 'fd' for it
 ```c
-disastrOS_send(mailbox_id,"message");
+disastrOS_send(fd,"message");
 ```
-- [Receive] - Receive a message from the mailbox (and save it in the buffer 'buffer')
+- [Receive] - Receive a message from the mailbox (and save it in the buffer 'buffer') using a descriptor 'fd' for it
 ```c
-disastrOS_receive(mailbox_id,buffer);
+disastrOS_receive(fd,buffer);
 ```
 - [Close] - Close the descriptor 'fd' of the mailbox
 ```c
@@ -80,13 +80,15 @@ disastrOS_destroyResource(mailbox_id)
 
 1. the mailbox structures and allocation files: 
    - disastrOS_mailbox.*
+  
+2. the constants: 
+   - disastrOS_constants.h
 
-2. modified system calls to manage mailbox files:
+3. the modified system calls to manage mailbox files:
    - disastrOS_open_resource.c
-   - disastrOS_close_resource.c
    - disastrOS_destroy_resource.c
 
-3. new system calls to manage mailbox files:
+4. the new system calls to manage mailbox files:
    - disastrOS_send.c
    - disastrOS_receive.c
 
@@ -100,20 +102,25 @@ The following code allows to run the test program:
 > ./disastrOS_test
 ```
 
-> The test program creates MAX_NUM_MAILBOXES mailboxes and spawns MAX_SENDERS senders and MAX_RECEIVERS receivers for each mailbox. Each sender/receiver sends/receives NUM_MESSAGES_SENDER/NUM_MESSAGES_RECEIVER messages.
+> The test program creates MAX_NUM_MAILBOXES mailboxes and spawns MAX_SENDERS senders and MAX_RECEIVERS receivers for each mailbox. 
+Each sender/receiver sends/receives NUM_MESSAGES_SENDER/NUM_MESSAGES_RECEIVER messages.
+Every mailbox has to be empty for the test to be successful: NUM_MESSAGES_SENDER should be set equal to NUM_MESSAGES_RECEIVER.
 
-> The constants are defined (and can be modified) in disastrOS_constants.h file:
+> The constant MAX_NUM_MAILBOXES is defined (and can be modified) in disastrOS_constants.h file:
 ```c
 #define MAX_NUM_MAILBOXES 8
+```
+> The other constants are defined (and can be modified) in disastrOS_test.c file:
+```c
 #define MAX_SENDERS 10
 #define MAX_RECEIVERS 10
 #define NUM_MESSAGES_SENDER 130
 #define NUM_MESSAGES_RECEIVER 130
 ```
 
-> The test program succeeds if the number of messages sent is equal to the number of messages received (total score = 0).
+> The test program succeeds if the number of messages sent is equal to the number of messages received (total score = 0) for each mailbox created.
 
->In order to follow step by step how the test runs the following constant has to be redefined with a value different from 0.
+>In order to follow step by step how the test runs, the following constant has to be redefined in disastrOS_constants.h file with a value different from 0.
 ```c
-#define _PRINTFUL_ 0
+#define _PRINTFUL_ 0 //->1
 ```

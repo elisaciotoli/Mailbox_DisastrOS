@@ -7,6 +7,13 @@
 #include "disastrOS_mailbox.h"
 #include "disastrOS_globals.h"
 
+
+#define MAX_SENDERS 10
+#define MAX_RECEIVERS 10
+#define NUM_MESSAGES_SENDER 130
+#define NUM_MESSAGES_RECEIVER 130
+
+
 // we need this to handle the sleep state
 void sleeperFunction(void* args){
   if(_PRINTFUL_)  
@@ -35,9 +42,9 @@ void senderFunction(void* args){
   //send
   char* message = "hi I'm writing in the mailbox";
   for(int i=0; i<NUM_MESSAGES_SENDER; i++){
-    int tmp = disastrOS_send(mailbox_id,message);
+    int tmp = disastrOS_send(fd,message);
     while(tmp == DSOS_EMAILBOXFULL){
-      tmp = disastrOS_send(mailbox_id,message);
+      tmp = disastrOS_send(fd,message);
     }
     messages_counter++;
   }
@@ -70,9 +77,9 @@ void receiverFunction(void* args){
   //receive
   for(int i=0; i<NUM_MESSAGES_RECEIVER; i++){
     char buffer[MAX_MESSAGE_LENGTH] = "";
-    int tmp = disastrOS_receive(mailbox_id,buffer);
+    int tmp = disastrOS_receive(fd,buffer);
     while(tmp == DSOS_EMAILBOXEMPTY){
-      tmp = disastrOS_receive(mailbox_id,buffer);
+      tmp = disastrOS_receive(fd,buffer);
     }
     if(_PRINTFUL_)
       printf("[RECEIVER %d] received message of %d bytes\n",disastrOS_getpid(),(int)strlen(buffer));
@@ -107,6 +114,7 @@ void childFunction(void* args){
   }
 
   int alive_children=0;
+  
   //spawn receiver children
   for (int i=0; i<MAX_RECEIVERS; ++i) {
     disastrOS_spawn(receiverFunction, &mailbox_id);

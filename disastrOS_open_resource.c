@@ -25,7 +25,7 @@ void internal_openResource(){
       running->syscall_retvalue=DSOS_ERESOURCECREATE;
       return;
     }
-    if(type == 1){
+    if(type == MAILBOX_TYPE){
       res = (Resource*) Mailbox_alloc(id,type);
       List_insert(&resources_list, resources_list.last, (ListItem*) res);
     }

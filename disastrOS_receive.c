@@ -5,18 +5,26 @@
 #include "disastrOS_syscalls.h"
 #include "disastrOS_globals.h"
 #include "disastrOS_mailbox.h"
+#include "disastrOS_descriptor.h"
 
 void internal_receive() {
-  int id=running->syscall_args[0];
+  int mailbox_fd=running->syscall_args[0];
   char* buffer=(char*) running->syscall_args[1];
   
   //find the mailbox
-  Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,id);
-  if(mailbox == NULL){
+  Descriptor* des=DescriptorList_byFd(&running->descriptors, mailbox_fd);
+  if (! des){
+    running->syscall_retvalue=DSOS_ERESOURCECLOSE;
+    return;
+  }
+  Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,des->resource->id);
+  if(! mailbox){
     printf("[RECEIVE %d] Error: Cannot find mailbox!\n",disastrOS_getpid());
     return;
   }
   
+  
+  //wait if necessary
   if((&mailbox->messages_list)->size == 0){
 
     if(_PRINTFUL_)
@@ -39,7 +47,8 @@ void internal_receive() {
     return;
   }
 
-  //receive message
+
+  //read message from queue
   if(_PRINTFUL_)
     printf("[RECEIVE %d] detaching message\n",disastrOS_getpid());
 
@@ -57,6 +66,7 @@ void internal_receive() {
 
   if(Message_free(message)<0) 
     printf("[RECEIVE %d] Errore: Cannot free message!\n",disastrOS_getpid());
+
 
   //if necessary unblock processes waiting to write
   if((&mailbox->waiting_list)->size > 0){

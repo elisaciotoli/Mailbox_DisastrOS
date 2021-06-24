@@ -25,7 +25,7 @@ void internal_destroyResource(){
 
   res=(Resource*) List_detach(&resources_list, (ListItem*) res);
   assert(res);
-  if(res->type == 1) Mailbox_free((Mailbox*)res);
+  if(res->type == MAILBOX_TYPE) Mailbox_free((Mailbox*)res);
   else Resource_free(res);
   running->syscall_retvalue=0;
 }

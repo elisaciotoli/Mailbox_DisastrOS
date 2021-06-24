@@ -296,13 +296,13 @@ int disastrOS_destroyResource(int resource_id) {
 }
 
 //new
-int disastrOS_send(int mailbox, char* message) {
-  return disastrOS_syscall(DSOS_CALL_SEND, mailbox, message);
+int disastrOS_send(int mailbox_fd, char* message) {
+  return disastrOS_syscall(DSOS_CALL_SEND, mailbox_fd, message);
 }
 
 //new
-int disastrOS_receive(int mailbox,char* buffer) {
-  return disastrOS_syscall(DSOS_CALL_RECEIVE, mailbox,buffer);
+int disastrOS_receive(int mailbox_fd,char* buffer) {
+  return disastrOS_syscall(DSOS_CALL_RECEIVE, mailbox_fd,buffer);
 }
 
 

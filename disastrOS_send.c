@@ -5,19 +5,26 @@
 #include "disastrOS_syscalls.h"
 #include "disastrOS_resource.h"
 #include "disastrOS_mailbox.h"
+#include "disastrOS_descriptor.h"
 
 void internal_send() {
-  int id = running->syscall_args[0];
+  int mailbox_fd = running->syscall_args[0];
   char* text = (char*)running->syscall_args[1];
 
   //find the mailbox
-  Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,id);
-  if(mailbox == NULL){
+  Descriptor* des=DescriptorList_byFd(&running->descriptors, mailbox_fd);
+  if (! des){
+    running->syscall_retvalue=DSOS_ERESOURCECLOSE;
+    return;
+  }
+  Mailbox* mailbox = (Mailbox*) ResourceList_byId(&resources_list,des->resource->id);
+  if(! mailbox){
     printf("[SEND %d] Error: Cannot find mailbox!\n",disastrOS_getpid());
     return;
   }
 
-  //wait
+
+  //wait if necessary
   if((&mailbox->messages_list)->size == MAX_NUM_MESSAGES_PER_MAILBOX){
 
     if(_PRINTFUL_)
@@ -33,13 +40,14 @@ void internal_send() {
     if(List_insert(&(mailbox->waiting_list),(mailbox->waiting_list).last, (ListItem*) running_ptr) == 0)
       printf("[SEND %d] Error: Cannot write in mailbox waiting list\n",disastrOS_getpid());
 
-    // pick the next
+    // pick the next running
     PCB* next_running= (PCB*) List_detach(&ready_list, ready_list.first);
     running=next_running;
     return;
   }
 
-  //send message
+
+  //write message in queue
   if(_PRINTFUL_)
     printf("[SEND %d] inserting message\n",disastrOS_getpid());
     

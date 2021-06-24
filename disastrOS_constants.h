@@ -55,12 +55,8 @@
 
 //useful
 #define MAX_MESSAGE_LENGTH 32
-#define MAX_SENDERS 10
-#define MAX_RECEIVERS 10
-#define NUM_MESSAGES_SENDER 130
-#define NUM_MESSAGES_RECEIVER 130
 #define MAILBOX_TYPE 1
-#define _PRINTFUL_ 0
+#define _PRINTFUL_ 0 //->1
 
 // scheduling
 #define ALPHA 0.5f
