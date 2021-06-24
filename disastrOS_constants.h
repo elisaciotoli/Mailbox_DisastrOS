@@ -28,8 +28,9 @@
 #define DSOS_ERESOURCENOFD -11
 #define DSOS_ERESOURCECLOSE -12
 #define DSOS_ERESOURCEINUSE -13
-#define DSOS_EMAILBOXFULL -14
-#define DSOS_EMAILBOXEMPTY -15
+#define DSOS_EMAILBOXFULL -14 //full mailbox
+#define DSOS_EMAILBOXEMPTY -15 //empty mailbox
+#define DSOS_ERECEIVEBUF -16 //buffer too short for the message
 
 // syscall numbers
 #define DSOS_MAX_SYSCALLS 32

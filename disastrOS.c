@@ -184,7 +184,7 @@ void disastrOS_start(void (*f)(void*), void* f_args, char* logfile){
   syscall_numarg[DSOS_CALL_SEND]      = 2;
 
   syscall_vector[DSOS_CALL_RECEIVE]      = internal_receive;
-  syscall_numarg[DSOS_CALL_RECEIVE]      = 2;
+  syscall_numarg[DSOS_CALL_RECEIVE]      = 3;
 
   // setup the scheduling lists
   running=0;
@@ -301,8 +301,8 @@ int disastrOS_send(int mailbox_fd, char* message) {
 }
 
 //new
-int disastrOS_receive(int mailbox_fd,char* buffer) {
-  return disastrOS_syscall(DSOS_CALL_RECEIVE, mailbox_fd,buffer);
+int disastrOS_receive(int mailbox_fd,char* buffer,int buf_size) {
+  return disastrOS_syscall(DSOS_CALL_RECEIVE, mailbox_fd,buffer,buf_size);
 }
 
 

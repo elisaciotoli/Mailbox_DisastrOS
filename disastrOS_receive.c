@@ -10,6 +10,7 @@
 void internal_receive() {
   int mailbox_fd=running->syscall_args[0];
   char* buffer=(char*) running->syscall_args[1];
+  int buf_size=running->syscall_args[2];
   
   //find the mailbox
   Descriptor* des=DescriptorList_byFd(&running->descriptors, mailbox_fd);
@@ -22,7 +23,7 @@ void internal_receive() {
     printf("[RECEIVE %d] Error: Cannot find mailbox!\n",disastrOS_getpid());
     return;
   }
-  
+
   
   //wait if necessary
   if((&mailbox->messages_list)->size == 0){
@@ -54,10 +55,16 @@ void internal_receive() {
 
   running->syscall_retvalue=0;
   Message* message = (Message*) List_detach(&mailbox->messages_list,mailbox->messages_list.first);
+
+  //check if the buffer has enough space for the message
+  if(buf_size < message->size){
+    running->syscall_retvalue = DSOS_ERECEIVEBUF;
+    return;
+  }
   
   //copy message in buffer
   int cnt = 0;
-  while(cnt < MAX_MESSAGE_LENGTH && message->text[cnt] != '\0'){
+  while(cnt < message->size){
     buffer[cnt] = message->text[cnt];
     cnt++;
   }

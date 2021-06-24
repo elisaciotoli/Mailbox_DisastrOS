@@ -77,9 +77,9 @@ void receiverFunction(void* args){
   //receive
   for(int i=0; i<NUM_MESSAGES_RECEIVER; i++){
     char buffer[MAX_MESSAGE_LENGTH] = "";
-    int tmp = disastrOS_receive(fd,buffer);
+    int tmp = disastrOS_receive(fd,buffer,MAX_MESSAGE_LENGTH);
     while(tmp == DSOS_EMAILBOXEMPTY){
-      tmp = disastrOS_receive(fd,buffer);
+      tmp = disastrOS_receive(fd,buffer,MAX_MESSAGE_LENGTH);
     }
     if(_PRINTFUL_)
       printf("[RECEIVER %d] received message of %d bytes\n",disastrOS_getpid(),(int)strlen(buffer));

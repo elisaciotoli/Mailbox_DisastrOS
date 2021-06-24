@@ -59,13 +59,13 @@ int fd = disastrOS_openResource(mailbox_id,MAILBOX_TYPE,DSOS_CREATE);
 ```c
 int fd = disastrOS_openResource(mailbox_id,MAILBOX_TYPE,0);
 ```
-- [Send] - Send the message "message" through the mailbox using a descriptor 'fd' for it
+- [Send] - Send the message 'message' through the mailbox using a descriptor 'fd' for it
 ```c
-disastrOS_send(fd,"message");
+disastrOS_send(fd,message);
 ```
-- [Receive] - Receive a message from the mailbox (and save it in the buffer 'buffer') using a descriptor 'fd' for it
+- [Receive] - Receive a message from the mailbox (and save it in the buffer 'buffer' with size 'buf_size') using a descriptor 'fd' for it
 ```c
-disastrOS_receive(fd,buffer);
+disastrOS_receive(fd,buffer,buf_size);
 ```
 - [Close] - Close the descriptor 'fd' of the mailbox
 ```c
